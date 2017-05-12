@@ -1,0 +1,15 @@
+ 2031  composer create-project laravel/laravel phpunit
+ 2072  cd /etc/apache2/hosts
+ 2073  cd /etc/apache2/sites-available
+ 2076  sudo nano phpunit.conf
+ 2078  sudo nano /etc/hosts
+ 2082  sudo a2ensite phpunit.conf
+ 2086  ln -s /home/s/trabajo/devcodela/phpunit/codigo/phpunit phpunit
+ 2095  sudo service apache2 reload
+ 2096  sudo cat /etc/apache2/sites-available/phpunit.conf 
+ 2112  composer update
+ 2116  sudo chmod 755 -R bootstrap/cache
+ 2124  sudo chmod 755 -R storage/logs/
+ 2134  sudo chown www-data:www-data -R bootstrap
+ 2135  sudo chown www-data:www-data -R storage/
+ 2136  php artisan key:generate
