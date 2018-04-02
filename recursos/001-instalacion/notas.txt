@@ -1,0 +1,4 @@
+composer create-project laravel/laravel laravel-avanzado 5.6.*
+mysql -u root -h localhost -p < dump.sql
+php artisian key:generate
+
