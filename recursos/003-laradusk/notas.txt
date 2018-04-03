@@ -1,0 +1,12 @@
+composer require laravel/dusk
+php artisan dusk:install
+php artisan dusk
+
+Modificar el valor de APP_URL en .env
+
+APP_URL=http://127.0.0.1:8000
+
+Si se configura apache puede tambien cambiarse el valor
+
+
+
