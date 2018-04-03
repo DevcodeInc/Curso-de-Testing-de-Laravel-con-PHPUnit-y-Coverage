@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
-    protected $table = 'Categorias';
+    protected $table = 'categorias';
     public $timestamps = true;
     protected $fillable = [
             'name',
