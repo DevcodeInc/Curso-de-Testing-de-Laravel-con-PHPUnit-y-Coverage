@@ -1,0 +1,2 @@
+php artisian dusk:make CategoriasTest
+php artisian dusk
