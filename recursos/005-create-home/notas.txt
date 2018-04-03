@@ -1,0 +1,7 @@
+php artisan make:seeder CategoriasTableSeeder
+php artisan migrate:refresh --seed
+php artisan db:seed --class=CategoriasTableSeeder
+
+php artisan make:controller HomeController --resource
+
+php artisian dusk
