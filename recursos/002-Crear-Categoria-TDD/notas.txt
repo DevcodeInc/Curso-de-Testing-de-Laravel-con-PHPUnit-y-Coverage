@@ -1,0 +1,4 @@
+php artisian make:test CategoriaTest
+php artisan make:model Categoria --migration
+php artisan migrate
+vendor/bin/phpunit
