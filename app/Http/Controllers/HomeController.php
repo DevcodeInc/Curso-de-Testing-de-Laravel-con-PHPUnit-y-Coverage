@@ -15,7 +15,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $Categorias = Categoria::all();
+        if (!\Cache::has('Categorias')) {
+            $Categorias = Categoria::all();
+            \Cache::put('Categorias', $Categorias, 5);
+        } else {
+            $Categorias = \Cache::get('Categorias');
+        }
 
         return view('pages/home', [
             'categorias' => $Categorias
