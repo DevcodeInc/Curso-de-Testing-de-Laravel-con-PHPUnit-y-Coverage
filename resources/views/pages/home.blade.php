@@ -11,5 +11,6 @@
 
 @section('content')
     <h1>Devcodela</h1>
+    <b>{{ $msg }}</b>
     <h2>Laravel - conceptos avanzados</h2>
 @stop
