@@ -13,7 +13,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($msg = null)
     {
         if (!\Cache::has('Categorias')) {
             $Categorias = Categoria::all();
@@ -23,7 +23,8 @@ class HomeController extends Controller
         }
 
         return view('pages/home', [
-            'categorias' => $Categorias
+            'categorias' => $Categorias,
+            'msg' => $msg
         ]);
     }
 
