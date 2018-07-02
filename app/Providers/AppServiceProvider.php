@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         \App\Categoria::creating(function($model){
             $model->name = strtoupper($model->name);
+            \Cache::forget('Categorias');
         });
     }
 
