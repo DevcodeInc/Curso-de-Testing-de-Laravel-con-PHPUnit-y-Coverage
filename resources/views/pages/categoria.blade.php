@@ -23,7 +23,7 @@
             <input type="text" class="form-control" name="comment"/>
         </div>
         <div class="form-group">
-        	<label class="col-md-4">Ordeb Categoria</label>
+        	<label class="col-md-4">Orden Categoria</label>
             <input type="text" class="form-control" name="order"/>
         </div>
         <div class="form-group">
