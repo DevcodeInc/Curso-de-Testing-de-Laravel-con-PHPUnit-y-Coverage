@@ -4,22 +4,20 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class CategoriaModelServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
     public function boot()
     {
-        \App\Categoria::creating(function($model){
-            $model->name = strtoupper($model->name);
-        });
+         \App\Categoria::observe(\App\Observers\CategoriaObserver::class);
     }
 
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */

@@ -1,2 +1,8 @@
 https://es.wikipedia.org/wiki/Observer_(patr%C3%B3n_de_dise%C3%B1o)
 
+Metodos de observer
+retrieved, creating, created, updating, updated, saving, saved, deleting, deleted, restoring, restore
+
+Crear un Provider
+php artisan make:provider CategoriaModelServiceProvider
+
