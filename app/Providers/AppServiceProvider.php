@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \App\Categoria::creating(function($model){
+            $model->name = strtoupper($model->name);
+            \Cache::forget('Categorias');
+        });
     }
 
     /**
