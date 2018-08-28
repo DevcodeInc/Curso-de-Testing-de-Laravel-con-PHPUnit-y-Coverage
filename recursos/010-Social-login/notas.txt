@@ -1,0 +1,9 @@
+composer require laravel/socialite
+php artisan package:discover
+php artisan make:controller LoginController
+
+php artisan migrate
+
+https://developers.facebook.com
+https://apps.twitter.com/
+
