@@ -27,6 +27,25 @@
                                 </ul>
                             </li>
                             <li><a href="#">Contacto</a></li>
+                            @guest
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="login">login<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url('/login/social/facebook') }}">Facebook</a></li>
+                                    <li><a href="{{ url('/login/social/twitter') }}">Twitter</a></li>
+                                    <li><a href="{{ url('/login/social/github') }}">GitHub</a></li>
+                                </ul>
+                            </li>
+                            @endguest
+
+                            @auth
+                            <li class="inactive">
+                                <a href="#">{{ auth()->user()->name }}</a>
+                            </li>
+                            <li class="inactive">
+                                <a href="{{ url('/login/logout') }}"">Logout</a>
+                            </li>
+                            @endauth
+
                         </ul>
                     </div>
                 </nav>
