@@ -34,7 +34,7 @@ class NuevaCategoriaNotifications extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'slack'];
     }
 
     /**
@@ -71,4 +71,21 @@ class NuevaCategoriaNotifications extends Notification
         ];
     }
 
+     /**
+     * Get the Slack representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return \Illuminate\Notifications\Messages\SlackMessage
+     */
+    public function toSlack($notifiable)
+    {
+        $categoria = $this->categoria;
+        return (new SlackMessage)
+            ->success()
+            ->content("Se creo una nueva categoria")
+            ->attachment(function ($attachment) use ($categoria) {
+                $attachment->title($categoria->name, route('slack', $categoria->id))
+                    ->content($categoria->comment);
+            });
+    }
 }
