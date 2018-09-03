@@ -13,7 +13,9 @@ class CategoriaObserver
    public function creating(Categoria $categoria)
    {
       $categoria->comment = strtoupper($categoria->comment);
-      $user = Auth::User();
-      $user->notify(new NuevaCategoriaNotifications($categoria));
+      if (Auth::check()) {
+          $user = Auth::User();
+          $user->notify(new NuevaCategoriaNotifications($categoria));
+      }
    }
 }
